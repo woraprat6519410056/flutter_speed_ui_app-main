@@ -161,6 +161,49 @@ class _A02PageUIState extends State<A02PageUI> {
                   )
                 ],
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                          color: Colors.pink, width: 1), // กรอบสีชมพู
+                    ),
+                    child: ClipOval(
+                      child: Image.asset('assets/images/imga2.png',
+                          height: 40, width: 40, fit: BoxFit.cover),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                          color: Colors.pink, width: 1), // กรอบสีชมพู
+                    ),
+                    child: ClipOval(
+                      child: Image.asset('assets/images/imga3.png',
+                          height: 40, width: 40, fit: BoxFit.cover),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                          color: Colors.pink, width: 1), // กรอบสีชมพู
+                    ),
+                    child: ClipOval(
+                      child: Image.asset('assets/images/imga4.png',
+                          height: 40, width: 40, fit: BoxFit.cover),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ));
