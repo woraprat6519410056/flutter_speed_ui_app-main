@@ -10,6 +10,18 @@ class C02PageUI extends StatefulWidget {
 class _C02PageUIState extends State<C02PageUI> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              "assets/images/imgc1.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          //YourWidget(), // Widget อื่นๆ บนพื้นหลัง
+        ],
+      ),
+    );
   }
 }

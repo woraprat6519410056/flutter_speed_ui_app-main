@@ -4,6 +4,7 @@ import 'package:flutter_speed_ui_app/view/a02_page_ui.dart';
 import 'package:flutter_speed_ui_app/view/b01_page_ui.dart';
 import 'package:flutter_speed_ui_app/view/b02_page_ui.dart';
 import 'package:flutter_speed_ui_app/view/c01_page_ui.dart';
+import 'package:flutter_speed_ui_app/view/c02_page_ui.dart';
 import 'package:flutter_speed_ui_app/view/home_ui.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class _iotsaufirStateState extends State<iotsaufirState> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: C01PageUI(), //เรียกใช้งานหน้าจอแรกของแอป
+      home: C02PageUI(), //เรียกใช้งานหน้าจอแรกของแอป
     );
   }
 }
