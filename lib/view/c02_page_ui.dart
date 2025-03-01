@@ -43,7 +43,7 @@ class _C02PageUIState extends State<C02PageUI> {
                   ),
                   padding: EdgeInsets.all(8),
                   child: Image.asset(
-                    'assets/images/imgc2.png', // เปลี่ยนเป็นรูปที่ต้องการวางข้างหน้า
+                    'assets/images/imgc2.png',
                     width: MediaQuery.of(context).size.width *
                         0.2, // ปรับให้เล็กลง
                   ),
