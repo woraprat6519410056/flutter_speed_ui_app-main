@@ -79,7 +79,7 @@ class _A01PageUIState extends State<A01PageUI> {
                       ),
                     ),
                     child: Text(
-                      'Login',
+                      'Sign in',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: const Color.fromARGB(255, 255, 255, 255),
@@ -102,7 +102,7 @@ class _A01PageUIState extends State<A01PageUI> {
                       ),
                     ),
                     child: Text(
-                      'Sigup',
+                      'Register',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: const Color.fromARGB(255, 0, 0, 0),
