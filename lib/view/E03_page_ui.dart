@@ -10,6 +10,17 @@ class E03PageUI extends StatefulWidget {
 class _E03PageUIState extends State<E03PageUI> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
