@@ -38,7 +38,7 @@ class _D03PageUIState extends State<D03PageUI> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Welcome back! Glad',
+                  'Hello! Register to get',
                   style: TextStyle(
                       fontSize: MediaQuery.of(context).size.height * 0.030,
                       fontWeight: FontWeight.bold),
@@ -47,7 +47,7 @@ class _D03PageUIState extends State<D03PageUI> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'to see you, Again!',
+                  'started',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.030,
                     fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class _D03PageUIState extends State<D03PageUI> {
                       color: Colors.grey,
                     ),
                   ), //ตอนที่แตะจะมีกรอบ
-                  hintText: '   Enter your email',
+                  hintText: '   Username',
                   hintStyle: TextStyle(
                     color: Colors.grey,
                   ),
@@ -97,7 +97,7 @@ class _D03PageUIState extends State<D03PageUI> {
                       color: Colors.grey,
                     ),
                   ), //ตอนที่แตะจะมีกรอบ
-                  hintText: '   Enter your password',
+                  hintText: '   Email',
                   hintStyle: TextStyle(
                     color: Colors.grey,
                   ),
@@ -106,22 +106,57 @@ class _D03PageUIState extends State<D03PageUI> {
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 10.0,
                   ),
-                  suffixIcon: Icon(
-                    Icons.visibility,
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่ยังไม่แตะจะไม่มีกรอบ
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่แตะจะมีกรอบ
+                  hintText: '   Password',
+                  hintStyle: TextStyle(
                     color: Colors.grey,
+                  ),
+                  //isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 10.0,
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Forgot Password ?',
-                    style: TextStyle(
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
                       color: Colors.grey,
-                      fontWeight: FontWeight.bold,
                     ),
+                  ), //ตอนที่ยังไม่แตะจะไม่มีกรอบ
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่แตะจะมีกรอบ
+                  hintText: '   Crnfirm password',
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+                  //isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 10.0,
                   ),
                 ),
               ),
@@ -243,12 +278,12 @@ class _D03PageUIState extends State<D03PageUI> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don\'t have an account?',
+                    'Already have an account?',
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Signup',
+                      'Login Now',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,

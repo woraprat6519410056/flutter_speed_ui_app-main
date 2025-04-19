@@ -12,214 +12,86 @@ class _C01PageUIState extends State<C01PageUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeUI()),
+                );
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: MediaQuery.of(context).size.height * 0.04,
+                color: const Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          ),
+          Image.asset(
+            'assets/images/imgc1.png',
+            fit: BoxFit.cover,
+          ),
+          Center(
             child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-            Text(
-              'Create Account',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.03,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            Text(
-              'Create an account so you can explore all the',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            Text(
-              'existing jobs',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeUI(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(300.0, 50.0),
-                backgroundColor: const Color.fromARGB(255, 244, 243, 244),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                ),
-              ),
-              child: Text(
-                'Email',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 111, 111, 111),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeUI(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(300.0, 50.0),
-                backgroundColor: const Color.fromARGB(255, 244, 243, 244),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                ),
-              ),
-              child: Text(
-                'Password',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 111, 111, 111),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeUI(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(300.0, 50.0),
-                backgroundColor: const Color.fromARGB(255, 244, 243, 244),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                ),
-              ),
-              child: Text(
-                'Confirm Password',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 111, 111, 111),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeUI(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(300.0, 50.0),
-                backgroundColor: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                ),
-              ),
-              child: Text(
-                'Sign in',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-            Text(
-              'Already have an account',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-            Text(
-              'Or continue with',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
+                  padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border:
-                        Border.all(color: Colors.grey, width: 1), // กรอบสีชมพู
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ClipOval(
-                    child: Image.asset('assets/images/imga2.png',
-                        height: 40, width: 40, fit: BoxFit.cover),
+                  child: Image.asset(
+                    'assets/images/imgc2.png',
+                    fit: BoxFit.cover,
+                    width: 65,
                   ),
                 ),
-                SizedBox(width: 10),
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border:
-                        Border.all(color: Colors.grey, width: 1), // กรอบสีชมพู
-                  ),
-                  child: ClipOval(
-                    child: Image.asset('assets/images/imga3.png',
-                        height: 40, width: 40, fit: BoxFit.cover),
+                SizedBox(height: 16),
+                Text(
+                  "HOPE FOR",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
                   ),
                 ),
-                SizedBox(width: 10),
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border:
-                        Border.all(color: Colors.grey, width: 1), // กรอบสีชมพู
+                Text(
+                  "HUMANITY",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                  child: ClipOval(
-                    child: Image.asset('assets/images/imga4.png',
-                        height: 40, width: 40, fit: BoxFit.cover),
+                ),
+                SizedBox(height: 200),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    "Welcome to",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.green,
+                    ),
+                  ),
+                ),
+                Text(
+                  "hope for humanity",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.green,
                   ),
                 ),
               ],
-            )
-          ],
-        )));
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

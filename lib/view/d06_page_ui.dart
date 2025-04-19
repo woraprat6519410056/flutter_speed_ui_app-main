@@ -18,74 +18,129 @@ class _D06PageUIState extends State<D06PageUI> {
           right: 45.0,
         ),
         child: Center(
-          child: Column(children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.025,
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  size: MediaQuery.of(context).size.height * 0.025,
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    size: MediaQuery.of(context).size.height * 0.025,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'OTP Verification',
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Create new password',
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height * 0.030,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Text(
+                'Your new password must be unique  ',
                 style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.030,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Text(
-              'Enter the verification code we just sent',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-            ),
-            Text(
-              'on your email address                             ',
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-            ),
-            /////////////////////////////// ช่องใส่ตัวเลข0-9= 4 ช่อง
-            SizedBox(height: MediaQuery.of(context).size.height * 0.3),
-            ElevatedButton(
-              onPressed: () {},
-              // ignore: sort_child_properties_last
-              child: Text(
-                'Send Code',
-                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.02,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.grey,
                 ),
               ),
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(350.0, 40.0),
-                backgroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusDirectional.circular(8.0),
+              Text(
+                'previously used from those                ',
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.02,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey,
                 ),
               ),
-            ),
-          ]),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่ยังไม่แตะจะไม่มีกรอบ
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่แตะจะมีกรอบ
+                  hintText: '   New Password',
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+                  //isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่ยังไม่แตะจะไม่มีกรอบ
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ), //ตอนที่แตะจะมีกรอบ
+                  hintText: '   Confirm Password',
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+                  //isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              ElevatedButton(
+                onPressed: () {},
+                // ignore: sort_child_properties_last
+                child: Text(
+                  'Send Code',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size(350.0, 40.0),
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusDirectional.circular(8.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

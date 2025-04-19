@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_ui_app/view/c03_page_ui.dart';
+import 'package:flutter_speed_ui_app/view/b02_page_ui.dart';
 
-class C02PageUI extends StatefulWidget {
-  const C02PageUI({super.key});
+class B03PageUi extends StatefulWidget {
+  const B03PageUi({super.key});
 
   @override
-  State<C02PageUI> createState() => _C02PageUIState();
+  State<B03PageUi> createState() => _B03PageUiState();
 }
 
-class _C02PageUIState extends State<C02PageUI> {
+class _B03PageUiState extends State<B03PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Center(
@@ -28,34 +29,27 @@ class _C02PageUIState extends State<C02PageUI> {
                     icon: Icon(
                       Icons.arrow_back_ios,
                       size: MediaQuery.of(context).size.height * 0.04,
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: const Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                 ),
-                Align(
-                  child: Container(
-                    padding: EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.green, width: 2),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Image.asset(
-                      'assets/images/imgc2.png',
-                      width: 50,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 70),
                 Text(
-                  "Sign in your account",
+                  "Create Account",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: Colors.blue,
                   ),
                 ),
-                SizedBox(height: 24),
+                SizedBox(height: 8),
+                Text(
+                  "Create an account so you can explore all the existing job ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 16, color: const Color.fromARGB(137, 0, 0, 0)),
+                ),
+                SizedBox(height: 32),
                 TextField(
-                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: "Email",
                     border: OutlineInputBorder(
@@ -63,7 +57,7 @@ class _C02PageUIState extends State<C02PageUI> {
                     ),
                   ),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 16),
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
@@ -73,72 +67,75 @@ class _C02PageUIState extends State<C02PageUI> {
                     ),
                   ),
                 ),
-                SizedBox(height: 24),
+                SizedBox(height: 16),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: "Confirm Password",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Sign in action
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(vertical: 14),
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                     child: Text(
-                      "SIGN IN",
+                      "Sign in",
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
                 SizedBox(height: 16),
-                Text("or sign in with"),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => B02PageUI()),
+                    );
+                  },
+                  child: Text(
+                    "Already have an account",
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Align(
+                  alignment: Alignment.center,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text("Or continue with",
+                        style: TextStyle(color: Colors.blue)),
+                  ),
+                ),
                 SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: Image.asset('assets/images/imgc3.png'),
+                      icon: Image.asset('assets/images/imga2.png'),
                       onPressed: () {},
                     ),
                     SizedBox(width: 16),
                     IconButton(
-                      icon: Image.asset('assets/images/imgc4.png'),
+                      icon: Image.asset('assets/images/imga3.png'),
                       onPressed: () {},
                     ),
                     SizedBox(width: 16),
                     IconButton(
-                      icon: Image.asset('assets/images/imgc5.png'),
+                      icon: Image.asset('assets/images/imga4.png'),
                       onPressed: () {},
-                    ),
-                  ],
-                ),
-                SizedBox(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account?',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: MediaQuery.of(context).size.width * 0.035,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => C03PageUI()),
-                        );
-                      },
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          fontSize: MediaQuery.of(context).size.width * 0.035,
-                        ),
-                      ),
                     ),
                   ],
                 ),
